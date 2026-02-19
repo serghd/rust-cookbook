@@ -11,6 +11,7 @@ use crate::samples::enums::process_numbers;
 use crate::samples::generics::process_objects;
 use crate::samples::inspect::evaluate_inspect;
 use crate::samples::iterators::{evaluate_iterators_1, evaluate_iterators_2};
+use crate::samples::lifetimes::{evaluate_advanturer, get_str, show_city_info};
 use crate::samples::option;
 use crate::samples::traits::{
     evaluate_trait, evaluate_trait_bounds, evaluate_trait_from, print_objects_as_ref,
@@ -62,7 +63,14 @@ fn main() {
     //evaluate_closures_3();
     //evaluate_closures_4();
     //evaluate_closures_5();
-    evaluate_inspect();
+
+    // #11. Inspect
+    //evaluate_inspect();
+
+    // #12. Lifetimes
+    // dbg!(get_str());
+    // show_city_info();
+    evaluate_advanturer();
 
     ////////////////////////////////////////////
 }

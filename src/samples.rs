@@ -6,6 +6,7 @@ pub mod enums;
 pub mod generics;
 pub mod inspect;
 pub mod iterators;
+pub mod lifetimes;
 pub mod option;
 pub mod traits;
 pub mod tuples;
