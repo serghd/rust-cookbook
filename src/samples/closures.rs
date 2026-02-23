@@ -1,91 +1,78 @@
 pub fn evaluate_closures_1() {
-    let v = vec![1, 2, 3];
-    v.iter()
-        .enumerate()
-        .for_each(|(index, value)| println!("index {}, value {}", index, value));
+   let v = vec![1, 2, 3];
+   v.iter().enumerate().for_each(|(index, value)| println!("index {}, value {}", index, value));
 }
 
 pub fn evaluate_closures_2() {
-    let numbers_together = "140399923481800622623218009598281";
-    for (index, symbol) in numbers_together.char_indices() {
-        match (index % 3) {
-            (0..=1) => print!("{}", symbol),
-            _ => print!("{}\t", symbol),
-        }
-    }
+   let numbers_together = "140399923481800622623218009598281";
+   for (index, symbol) in numbers_together.char_indices() {
+      match (index % 3) {
+         (0..=1) => print!("{}", symbol),
+         _ => print!("{}\t", symbol),
+      }
+   }
 }
 
 ////////////////////////////////////////////
 
 struct Company {
-    name: String,
-    ceo: Option<String>,
+   name: String,
+   ceo: Option<String>,
 }
 
 impl Company {
-    pub fn new(company_name: &str, ceo: &str) -> Self {
-        let ceo = match ceo {
-            "" => None,
-            _ => Some(ceo.to_string()),
-        };
-        Self {
-            name: company_name.to_string(),
-            ceo,
-        }
-    }
+   pub fn new(company_name: &str, ceo: &str) -> Self {
+      let ceo = match ceo {
+         "" => None,
+         _ => Some(ceo.to_string()),
+      };
+      Self { name: company_name.to_string(), ceo }
+   }
 
-    pub fn get_ceo(&self) -> Option<String> {
-        self.ceo.clone()
-    }
+   pub fn get_ceo(&self) -> Option<String> {
+      self.ceo.clone()
+   }
 }
 
 pub fn evaluate_closures_3() {
-    let v = vec![
-        Company::new("company 1", "CEO 1"),
-        Company::new("company 2", ""),
-        Company::new("company 3", "CEO 3"),
-    ];
+   let v = vec![
+      Company::new("company 1", "CEO 1"),
+      Company::new("company 2", ""),
+      Company::new("company 3", "CEO 3"),
+   ];
 
-    let v_filtered = v
-        .into_iter()
-        .filter_map(|company| company.get_ceo())
-        .collect::<Vec<String>>();
-    println!("{:?}", v_filtered);
+   let v_filtered = v.into_iter().filter_map(|company| company.get_ceo()).collect::<Vec<String>>();
+   println!("{:?}", v_filtered);
 }
 
 pub fn evaluate_closures_4() {
-    let v = vec![
-        Company::new("company 1", "CEO 1"),
-        Company::new("company 2", ""),
-        Company::new("company 3", "CEO 3"),
-    ];
-    let mut res_v = vec![];
-    v.iter().for_each(|company| {
-        res_v.push(company.get_ceo().ok_or_else(|| {
-            let str = format!("No CEO found for {}", company.name);
-            str
-        }))
-    });
-    println!("{:?}", res_v);
+   let v = vec![
+      Company::new("company 1", "CEO 1"),
+      Company::new("company 2", ""),
+      Company::new("company 3", "CEO 3"),
+   ];
+   let mut res_v = vec![];
+   v.iter().for_each(|company| {
+      res_v.push(company.get_ceo().ok_or_else(|| {
+         let str = format!("No CEO found for {}", company.name);
+         str
+      }))
+   });
+   println!("{:?}", res_v);
 }
 
 pub fn evaluate_closures_5() {
-    let locations = vec![
-        ("Nevis", 25),
-        ("Taber", 8428),
-        ("Markerville", 45),
-        ("Cardston", 3585),
-    ];
+   let locations = vec![("Nevis", 25), ("Taber", 8428), ("Markerville", 45), ("Cardston", 3585)];
 
-    let mut locations_peakable = locations.iter().peekable();
-    while locations_peakable.peek().is_some() {
-        match locations_peakable.peek() {
-            Some((name, count)) if *count < 100 => {
-                println!("{} is a village with population {}", name, count)
-            }
-            Some((name, count)) => println!("{} is a town with population {}", name, count),
-            None => break,
-        }
-        locations_peakable.next();
-    }
+   let mut locations_peakable = locations.iter().peekable();
+   while locations_peakable.peek().is_some() {
+      match locations_peakable.peek() {
+         Some((name, count)) if *count < 100 => {
+            println!("{} is a village with population {}", name, count)
+         }
+         Some((name, count)) => println!("{} is a town with population {}", name, count),
+         None => break,
+      }
+      locations_peakable.next();
+   }
 }
