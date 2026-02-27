@@ -148,7 +148,7 @@ impl AsRef<str> for User {
    }
 }
 
-pub fn print_as_ref<T>(input: T)
+fn print_as_ref<T>(input: T)
 where
    T: AsRef<str>,
 {
@@ -159,4 +159,54 @@ pub fn print_objects_as_ref() {
    print_as_ref("abc");
    print_as_ref(String::from("abc (String)"));
    print_as_ref(User { name: "Nick".to_string(), age: 21 })
+}
+
+////////////////////////////////////////////
+
+pub fn gives_higher_i32<T: PartialOrd + Display>(num1: T, num2: T) {
+   let higher = if num1 > num2 { num1 } else { num2 };
+   println!("higher: {}", higher);
+}
+
+////////////////////////////////////////////
+
+fn prints_with_impl_trait(input: impl Into<String> + Display) {
+   println!("Your input: {}", input);
+}
+
+pub fn print_with_impl_trait() {
+   let str1 = "abc";
+   let str2 = "Some words".to_string();
+   prints_with_impl_trait(str1);
+   prints_with_impl_trait(str2);
+}
+
+////////////////////////////////////////////
+
+fn returns_a_closure(input: &str) -> impl FnMut(i32) -> i32 {
+   match input {
+      "double" => |mut number| {
+         number *= 2;
+         println!("Doubled value: {}", number);
+         number
+      },
+      "triple" => |mut number| {
+         number *= 3;
+         println!("Tripled value: {}", number);
+         number
+      },
+      _ => |number| {
+         println!("Unknown operation");
+         number
+      },
+   }
+}
+
+pub fn call_returned_closures() {
+   let mut doubled_fun = returns_a_closure("double");
+   let mut tripled_fun = returns_a_closure("triple");
+   let mut other_fun = returns_a_closure("other");
+   doubled_fun(10);
+   tripled_fun(5);
+   other_fun(10);
 }
