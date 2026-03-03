@@ -1,5 +1,6 @@
 mod samples;
 
+use crate::samples::boxes::evaluate_errors;
 use crate::samples::chaning_methods::make_chaining;
 use crate::samples::channels::use_channels;
 use crate::samples::closures::{
@@ -103,7 +104,10 @@ fn main() {
    // using_arc_variant2();
 
    // #17. Channels
-   use_channels();
+   // use_channels();
+
+   // #18. Box
+   evaluate_errors();
 
    ////////////////////////////////////////////
 }
