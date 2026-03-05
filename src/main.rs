@@ -1,6 +1,7 @@
 mod samples;
 
 use crate::samples::boxes::evaluate_errors;
+use crate::samples::builder::use_builder;
 use crate::samples::chaning_methods::make_chaining;
 use crate::samples::channels::use_channels;
 use crate::samples::closures::{
@@ -26,6 +27,7 @@ use crate::samples::traits::{
    gives_higher_i32, print_objects_as_ref, print_string_as_bytes, print_with_impl_trait,
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
+use std::thread::Builder;
 
 fn main() {
    // // #1. Option
@@ -107,7 +109,10 @@ fn main() {
    // use_channels();
 
    // #18. Box
-   evaluate_errors();
+   // evaluate_errors();
+
+   // #19. Builder
+   use_builder();
 
    ////////////////////////////////////////////
 }
