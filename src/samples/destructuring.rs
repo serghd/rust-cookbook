@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 pub struct City {
    name: String,
    name_before: String,

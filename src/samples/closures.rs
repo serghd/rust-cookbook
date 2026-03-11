@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 pub fn evaluate_closures_1() {
    let v = vec![1, 2, 3];
    v.iter().enumerate().for_each(|(index, value)| println!("index {}, value {}", index, value));
@@ -6,7 +8,7 @@ pub fn evaluate_closures_1() {
 pub fn evaluate_closures_2() {
    let numbers_together = "140399923481800622623218009598281";
    for (index, symbol) in numbers_together.char_indices() {
-      match (index % 3) {
+      match index % 3 {
          (0..=1) => print!("{}", symbol),
          _ => print!("{}\t", symbol),
       }

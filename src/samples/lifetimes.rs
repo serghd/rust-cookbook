@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use std::fmt::{Display, Formatter};
 
 pub fn get_str() -> &'static str {

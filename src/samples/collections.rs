@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use std::collections::{BinaryHeap, HashMap, VecDeque};
 
 pub fn make_survey() {
@@ -40,7 +42,7 @@ fn show_remaining_vdeque(my_deque: &VecDeque<(&str, bool)>) {
 }
 
 fn done_last_job(my_deque: &mut VecDeque<(&str, bool)>) {
-   if let (Some(mut obj)) = my_deque.pop_back() {
+   if let Some(mut obj) = my_deque.pop_back() {
       obj.1 = true;
       my_deque.push_front(obj);
    }

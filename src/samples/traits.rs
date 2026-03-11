@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+#![allow(unused_imports)]
+
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
 
@@ -60,8 +63,7 @@ impl FightClose for Knight {}
 
 fn attack_with_fireball<T: FightFromDistance + Debug>(
    character: &T,
-   opponent: &mut Monster,
-   distance: u32,
+   opponent: &mut Monster
 ) {
    opponent.health -= 10;
    println!(
@@ -82,7 +84,7 @@ pub fn evaluate_trait_bounds() {
    let wizard = Wizard { health: 100 };
    let knight = Knight { health: 200 };
    let mut monster = Monster { health: 150 };
-   attack_with_fireball(&wizard, &mut monster, 300);
+   attack_with_fireball(&wizard, &mut monster);
    attack_with_sword(&knight, &mut monster);
 }
 

@@ -1,4 +1,5 @@
-use log::error;
+#![allow(dead_code)]
+
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 

@@ -1,5 +1,7 @@
+#![allow(dead_code)]
+
 pub fn evaluate_inspect() {
-   let v = vec![1, 2, 3];
+    let v = vec![1, 2, 3];
    let v_double = v
       .iter()
       .inspect(|item| {

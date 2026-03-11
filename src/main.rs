@@ -1,3 +1,5 @@
+#![allow(unused_imports)]
+
 mod samples;
 mod crates_and_modules;
 

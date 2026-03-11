@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 enum Number {
    UINT(u32),
    INT(i32),

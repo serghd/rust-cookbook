@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 pub fn tuple_print() {
    let random_tuple = ("Here is a string", 8, vec!['a'], 'a', [8, 9, 10], 7.7);
 
