@@ -1,11 +1,12 @@
 #![allow(unused_imports)]
 
-mod samples;
 mod crates_and_modules;
+mod samples;
+mod tests;
 
 use crate::samples::boxes::evaluate_errors;
 use crate::samples::builder::use_builder;
-use crate::samples::chaning_methods::make_chaining;
+use crate::samples::chaining_methods::make_chaining;
 use crate::samples::channels::use_channels;
 use crate::samples::closures::{
    evaluate_closures_1, evaluate_closures_2, evaluate_closures_3, evaluate_closures_4,
@@ -13,6 +14,7 @@ use crate::samples::closures::{
 };
 use crate::samples::collections::{binary_heap_demo, make_survey, vec_deque_demo};
 use crate::samples::cow::{evaluate_cow, evaluate_cow_vector};
+use crate::samples::deref::evaluate_deref;
 use crate::samples::destructuring::City;
 use crate::samples::enums::process_numbers;
 use crate::samples::generics::process_objects;
@@ -31,7 +33,6 @@ use crate::samples::traits::{
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
 use std::thread::Builder;
-use crate::samples::deref::evaluate_deref;
 
 fn main() {
    // // #1. Option
@@ -117,8 +118,8 @@ fn main() {
 
    // #19. Builder
    // use_builder();
-   
-   // #20. Deref 
+
+   // #20. Deref
    // evaluate_deref();
 
    // // #21. Crates and modules

@@ -61,10 +61,7 @@ trait FightFromDistance {}
 impl FightFromDistance for Wizard {}
 impl FightClose for Knight {}
 
-fn attack_with_fireball<T: FightFromDistance + Debug>(
-   character: &T,
-   opponent: &mut Monster
-) {
+fn attack_with_fireball<T: FightFromDistance + Debug>(character: &T, opponent: &mut Monster) {
    opponent.health -= 10;
    println!(
       "You attack with your bow. Your opponent now has {} health left.  You are now at: {:?}",

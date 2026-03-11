@@ -1,10 +1,11 @@
 pub mod boxes;
 pub mod builder;
-pub mod chaning_methods;
+pub mod chaining_methods;
 pub mod channels;
 pub mod closures;
 pub mod collections;
 pub mod cow;
+pub mod deref;
 pub mod destructuring;
 pub mod enums;
 pub mod generics;
@@ -17,4 +18,3 @@ pub mod rc;
 pub mod threads;
 pub mod traits;
 pub mod tuples;
-pub mod deref;
