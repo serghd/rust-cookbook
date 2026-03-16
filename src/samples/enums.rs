@@ -19,10 +19,10 @@ pub fn process_numbers() {
       match item {
          Number::UINT(number) => {
             println!("{}", number)
-         }
+         },
          Number::INT(number) => {
             println!("{}", number)
-         }
+         },
       }
    }
 }

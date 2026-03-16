@@ -73,7 +73,7 @@ pub fn use_builder() {
             if character.can_use {
                println!("Valid character: {:?}", character);
             }
-         }
+         },
          Err(error_info) => println!("Error info: {:?}", error_info),
       }
    }

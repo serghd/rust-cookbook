@@ -15,10 +15,10 @@ pub fn evaluate_cow() {
       match modulo_3(number) {
          Cow::Borrowed(borrowed) => {
             println!("{} went in. Now Cow is borrowed with this message: {}", number, borrowed)
-         }
+         },
          Cow::Owned(owned) => {
             println!("{} went in. Now Cow is owned with this message {}", number, owned)
-         }
+         },
       }
    }
 }

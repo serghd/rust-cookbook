@@ -23,7 +23,7 @@ mod tests {
 
 ////////////////////////////////////////////
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 struct Calculator {
    results: Vec<String>,
    current_input: String,
@@ -54,11 +54,9 @@ fn math(input: &str) -> i32 {
       panic!("Please only input numbers, +-, or spaces");
    }
 
-   let input = input
-       .trim_end_matches(['+', '-', ' '])
-       .replace(' ', "");
+   let input = input.trim_end_matches(['+', '-', ' ']).replace(' ', "");
 
-  let mut calculator = Calculator::new();
+   let mut calculator = Calculator::new();
 
    for character in input.chars() {
       match character {
@@ -67,7 +65,7 @@ fn math(input: &str) -> i32 {
                calculator.results.push(calculator.current_input.clone());
                calculator.clear_current_input();
             }
-         }
+         },
          '-' => {
             if calculator.current_input.contains('-') || calculator.current_input.is_empty() {
                calculator.push_char_in_current_input(character)
@@ -76,7 +74,7 @@ fn math(input: &str) -> i32 {
                calculator.clear_current_input();
                calculator.push_char_in_current_input(character);
             }
-         }
+         },
          number => {
             if calculator.current_input.contains('-') {
                calculator.results.push(calculator.current_input.clone());
@@ -85,7 +83,7 @@ fn math(input: &str) -> i32 {
             } else {
                calculator.push_char_in_current_input(number);
             }
-         }
+         },
       }
    }
    calculator.results.push(calculator.current_input);

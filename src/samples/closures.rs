@@ -71,7 +71,7 @@ pub fn evaluate_closures_5() {
       match locations_peakable.peek() {
          Some((name, count)) if *count < 100 => {
             println!("{} is a village with population {}", name, count)
-         }
+         },
          Some((name, count)) => println!("{} is a town with population {}", name, count),
          None => break,
       }

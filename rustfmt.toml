@@ -2,3 +2,4 @@ max_width = 100
 hard_tabs = false
 tab_spaces = 3
 use_small_heuristics = "Max"
+match_block_trailing_comma = true

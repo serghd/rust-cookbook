@@ -15,10 +15,10 @@ pub fn create_and_display_object() {
    match &user {
       Some(u) => {
          println!("#2 {:?}", u);
-      }
+      },
       None => {
          println!("None");
-      }
+      },
    }
 }
 
