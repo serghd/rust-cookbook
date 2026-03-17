@@ -1,6 +1,7 @@
 #![allow(unused_imports)]
 
 mod crates_and_modules;
+mod external_crates;
 mod samples;
 mod tests;
 
@@ -129,6 +130,12 @@ fn main() {
    // country::province::city::print_city("Canada", "New Brunswick", "Moncton");
    // // or just:
    // crates_and_modules::country::province::city::print_city("Canada", "New Brunswick", "Moncton");
+
+   // #22. External crates
+   // rand
+   // external_crates::random::display_characters();
+   // rayon
+   external_crates::rayon::evaluate_rayon_vec();
 
    ////////////////////////////////////////////
 }

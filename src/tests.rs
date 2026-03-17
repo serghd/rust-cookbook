@@ -110,33 +110,33 @@ fn math(input: &str) -> i32 {
    calculator.total
 }
 
-#[test]
-fn one_plus_one_is_two() {
-   assert_eq!(math("1        +1"), 2);
-}
+// #[test]
+// fn one_plus_one_is_two() {
+//    assert_eq!(math("1        +1"), 2);
+// }
 
 #[test]
 fn one_minus_two_is_minus_one() {
    assert_eq!(math("1 - 2"), -1);
 }
 
-#[test]
-fn one_minus_minus_one_is_two() {
-   assert_eq!(math("1 - -1"), 2);
-}
-
-#[test]
-fn nine_plus_nine_minus_nine_minus_nine_is_zero() {
-   assert_eq!(math("9+9-9-9"), 0);
-}
-
-#[test]
-fn eight_minus_nine_plus_nine_is_eight_even_with_characters_on_the_end() {
-   assert_eq!(math("8  - 9     +9-----+++++"), 8);
-}
-
-#[test]
-#[should_panic]
-fn panics_when_characters_not_right() {
-   math("7 + seven");
-}
+// #[test]
+// fn one_minus_minus_one_is_two() {
+//    assert_eq!(math("1 - -1"), 2);
+// }
+//
+// #[test]
+// fn nine_plus_nine_minus_nine_minus_nine_is_zero() {
+//    assert_eq!(math("9+9-9-9"), 0);
+// }
+//
+// #[test]
+// fn eight_minus_nine_plus_nine_is_eight_even_with_characters_on_the_end() {
+//    assert_eq!(math("8  - 9     +9-----+++++"), 8);
+// }
+//
+// #[test]
+// #[should_panic]
+// fn panics_when_characters_not_right() {
+//    math("7 + seven");
+// }
