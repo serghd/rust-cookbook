@@ -3,6 +3,7 @@
 mod crates_and_modules;
 mod external_crates;
 mod samples;
+mod standard_library;
 mod tests;
 
 use crate::samples::boxes::evaluate_errors;
@@ -33,7 +34,6 @@ use crate::samples::traits::{
    gives_higher_i32, print_objects_as_ref, print_string_as_bytes, print_with_impl_trait,
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
-use std::thread::Builder;
 
 fn main() {
    // // #1. Option
@@ -135,7 +135,11 @@ fn main() {
    // rand
    // external_crates::random::display_characters();
    // rayon
-   external_crates::rayon::evaluate_rayon_vec();
+   // external_crates::rayon::evaluate_rayon_vec();
+
+   // #23. Standard library
+   // standard_library:: arrays::print_cities();
+   standard_library::chars::eval_chars();
 
    ////////////////////////////////////////////
 }
