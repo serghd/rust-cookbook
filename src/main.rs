@@ -139,7 +139,8 @@ fn main() {
 
    // #23. Standard library
    // standard_library:: arrays::print_cities();
-   standard_library::chars::eval_chars();
+   // standard_library::chars::eval_chars();
+   standard_library::integers::print_countries_info();
 
    ////////////////////////////////////////////
 }
