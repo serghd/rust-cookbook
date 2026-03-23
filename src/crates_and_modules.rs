@@ -1,31 +1,31 @@
 #![allow(dead_code)]
 
 pub mod print_things {
-   use std::fmt::Display;
-   pub fn prints_one_thing<T: Display>(input: T) {
-      println!("{}", input);
-   }
+    use std::fmt::Display;
+    pub fn prints_one_thing<T: Display>(input: T) {
+        println!("{}", input);
+    }
 }
 
 pub mod country {
-   fn print_country(name: &str) {
-      println!("Country: {}", name);
-   }
+    fn print_country(name: &str) {
+        println!("Country: {}", name);
+    }
 
-   pub mod province {
-      fn print_province(name: &str) {
-         println!("Province: {}", name);
-      }
+    pub mod province {
+        fn print_province(name: &str) {
+            println!("Province: {}", name);
+        }
 
-      pub mod city {
-         use super::super::*;
-         use super::*;
+        pub mod city {
+            use super::super::*;
+            use super::*;
 
-         pub fn print_city(country: &str, province: &str, city: &str) {
-            print_country(country);
-            print_province(province);
-            println!("City: {}", city);
-         }
-      }
-   }
+            pub fn print_city(country: &str, province: &str, city: &str) {
+                print_country(country);
+                print_province(province);
+                println!("City: {}", city);
+            }
+        }
+    }
 }
