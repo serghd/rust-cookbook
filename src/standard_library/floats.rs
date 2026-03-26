@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 fn four_operations(num: f64) {
     println!(
         "Four operations:

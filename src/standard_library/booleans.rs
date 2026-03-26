@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 pub fn evaluate_booleans() {
     let my_vec = vec![true, false, true, false, false];
 

@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use rand::RngExt;
 
 pub fn eval_chars() {

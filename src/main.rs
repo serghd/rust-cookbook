@@ -34,6 +34,7 @@ use crate::samples::traits::{
     gives_higher_i32, print_objects_as_ref, print_string_as_bytes, print_with_impl_trait,
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
+use crate::standard_library::vectors::evaluate_vector;
 
 fn main() {
     // // #1. Option
@@ -142,7 +143,12 @@ fn main() {
     // standard_library::chars::eval_chars();
     // standard_library::integers::print_countries_info();
     // standard_library::floats::evaluate_floats();
-    standard_library::booleans::evaluate_booleans();
+    // standard_library::booleans::evaluate_booleans();
+    // evaluate_vector();
+    // standard_library::strings::string_capacity();
+    // standard_library::strings::string_popping();
+    standard_library::strings::string_retain();
+
 
     ////////////////////////////////////////////
 }
