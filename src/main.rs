@@ -50,7 +50,7 @@ fn main() {
     // tuple_destructuring();
 
     // #3. Enums
-    //process_numbers();
+    // process_numbers();
 
     // // #4. Destructuring
     // let city = City::create("City New".to_string(), "City Old".to_string(), 5000, 1219);
@@ -90,7 +90,7 @@ fn main() {
     // evaluate_closures_6();
 
     // #11. Inspect
-    //evaluate_inspect();
+    // evaluate_inspect();
 
     // #12. Lifetimes
     // dbg!(get_str());
