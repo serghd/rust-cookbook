@@ -13,6 +13,7 @@ pub mod inspect;
 pub mod interior_mutability;
 pub mod iterators;
 pub mod lifetimes;
+pub mod macros;
 pub mod option;
 pub mod rc;
 pub mod threads;

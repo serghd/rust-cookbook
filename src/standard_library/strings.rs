@@ -19,13 +19,13 @@ pub fn string_popping() {
         let pop_result = str.pop();
         match pop_result {
             Some(character) => print!("{}", character),
-            None => break
+            None => break,
         }
     }
 }
 
 pub fn string_retain() {
     let mut str = "Age: 20 Height: 194 Weight: 80".to_string();
-    str.retain(|character| character.is_alphabetic() || character == ' ' );
+    str.retain(|character| character.is_alphabetic() || character == ' ');
     dbg!(str);
 }

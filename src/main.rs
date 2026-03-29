@@ -24,6 +24,10 @@ use crate::samples::inspect::evaluate_inspect;
 use crate::samples::interior_mutability::{use_cell, use_mutex, use_rw_lock};
 use crate::samples::iterators::{evaluate_iterators_1, evaluate_iterators_2};
 use crate::samples::lifetimes::{evaluate_advanturer, get_str, show_city_info};
+use crate::samples::macros::{
+    macro_check_if_equal, macro_make_a_function, macro_might_print, macro_print_anything,
+    macro_print_anything2, macro_six_or_print,
+};
 use crate::samples::option;
 use crate::samples::rc::{evaluate_rc, evaluate_rc2};
 use crate::samples::threads::{
@@ -147,8 +151,15 @@ fn main() {
     // evaluate_vector();
     // standard_library::strings::string_capacity();
     // standard_library::strings::string_popping();
-    standard_library::strings::string_retain();
+    // standard_library::strings::string_retain();
 
+    // #24. Macros
+    // macro_six_or_print();
+    // macro_might_print();
+    // macro_check_if_equal();
+    // macro_print_anything();
+    // macro_print_anything2();
+    macro_make_a_function();
 
     ////////////////////////////////////////////
 }
