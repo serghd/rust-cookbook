@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub fn evaluate_iterators_1() {
     let vec = vec![1, 2, 3];
     let vec_a = vec.iter().map(|x| x + 1).collect::<Vec<i32>>();
@@ -16,19 +14,19 @@ pub fn evaluate_iterators_1() {
 
 #[derive(Clone)]
 struct Library {
-    lib_type: LibraryType,
+    _lib_type: LibraryType,
     books: Vec<String>,
 }
 
 #[derive(Clone)]
 enum LibraryType {
     City,
-    Country,
+    _Country,
 }
 
 impl Library {
     pub fn new() -> Self {
-        Self { lib_type: LibraryType::City, books: Vec::new() }
+        Self { _lib_type: LibraryType::City, books: Vec::new() }
     }
 
     pub fn add_book(&mut self, title: &str) {

@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::borrow::Cow;
 
 fn modulo_3(input: u32) -> Cow<'static, str> {

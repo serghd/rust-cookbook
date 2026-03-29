@@ -1,11 +1,8 @@
-#![allow(dead_code)]
-
 use std::fmt::{Debug, Display};
 
 #[derive(Debug)]
 struct MyGen {
-    name: String,
-    value: u32,
+    _value: u32,
 }
 
 fn print_object<T: Debug>(obj: T) -> T {
@@ -22,7 +19,7 @@ where
 }
 
 pub fn process_objects() {
-    let obj: MyGen = MyGen { name: "title1".to_string(), value: 10 };
+    let obj: MyGen = MyGen { _value: 10 };
     let obj2: u32 = 20;
 
     print_object(obj);

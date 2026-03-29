@@ -1,7 +1,5 @@
-#![allow(dead_code)]
-
 use std::fmt;
-use std::fmt::{Display, Formatter, write};
+use std::fmt::Formatter;
 use std::ops::Add;
 
 #[derive(Clone)]

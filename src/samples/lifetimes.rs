@@ -1,9 +1,11 @@
-#![allow(dead_code)]
-
 use std::fmt::{Display, Formatter};
 
 pub fn get_str() -> &'static str {
     "my string"
+}
+
+pub fn lt_get_str() {
+    dbg!(get_str());
 }
 
 ////////////////////////////////////////////

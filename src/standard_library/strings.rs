@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub fn string_capacity() {
     let mut str = String::new();
     let mut capacity_counter = 0;

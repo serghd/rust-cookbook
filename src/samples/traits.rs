@@ -1,6 +1,3 @@
-#![allow(dead_code)]
-#![allow(unused_imports)]
-
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
 
@@ -47,12 +44,12 @@ struct Monster {
 
 #[derive(Debug)]
 struct Wizard {
-    health: i32,
+    _health: i32,
 }
 
 #[derive(Debug)]
 struct Knight {
-    health: i32,
+    _health: i32,
 }
 
 trait FightClose {}
@@ -78,8 +75,8 @@ fn attack_with_sword<T: FightClose + Debug>(character: &T, opponent: &mut Monste
 }
 
 pub fn evaluate_trait_bounds() {
-    let wizard = Wizard { health: 100 };
-    let knight = Knight { health: 200 };
+    let wizard = Wizard { _health: 100 };
+    let knight = Knight { _health: 200 };
     let mut monster = Monster { health: 150 };
     attack_with_fireball(&wizard, &mut monster);
     attack_with_sword(&knight, &mut monster);
@@ -138,7 +135,7 @@ where
 
 struct User {
     name: String,
-    age: u32,
+    _age: u32,
 }
 
 impl AsRef<str> for User {
@@ -157,7 +154,11 @@ where
 pub fn print_objects_as_ref() {
     print_as_ref("abc");
     print_as_ref(String::from("abc (String)"));
-    print_as_ref(User { name: "Nick".to_string(), age: 21 })
+    print_as_ref(User { name: "Nick".to_string(), _age: 21 })
+}
+
+pub fn traits_print_string_as_bytes() {
+    print_string_as_bytes("abc");
 }
 
 ////////////////////////////////////////////
@@ -165,6 +166,10 @@ pub fn print_objects_as_ref() {
 pub fn gives_higher_i32<T: PartialOrd + Display>(num1: T, num2: T) {
     let higher = if num1 > num2 { num1 } else { num2 };
     println!("higher: {}", higher);
+}
+
+pub fn traits_gives_higher_i32() {
+    gives_higher_i32(8, 10);
 }
 
 ////////////////////////////////////////////

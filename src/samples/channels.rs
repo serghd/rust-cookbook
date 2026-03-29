@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::sync::mpsc::channel;
 
 pub fn use_channels() {

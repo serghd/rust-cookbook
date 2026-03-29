@@ -1,20 +1,18 @@
-#![allow(dead_code)]
-
 #[derive(Debug)]
 enum Lifestate {
     Alive,
     Dead,
-    NeverAlive,
-    Uncertain,
+    _NeverAlive,
+    _Uncertain,
 }
 
 #[derive(Debug)]
 struct Character {
     name: String,
-    age: u32,
+    _age: u32,
     height: u32,
     weight: u32,
-    lifestate: Lifestate,
+    _lifestate: Lifestate,
     can_use: bool,
 }
 
@@ -22,10 +20,10 @@ impl Character {
     fn new(name: &str, age: u32, height: u32, weight: u32, alive: bool) -> Self {
         Self {
             name: name.to_string(),
-            age,
+            _age: age,
             height,
             weight,
-            lifestate: if alive { Lifestate::Alive } else { Lifestate::Dead },
+            _lifestate: if alive { Lifestate::Alive } else { Lifestate::Dead },
             can_use: false,
         }
     }

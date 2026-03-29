@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 macro_rules! six_or_print {
     (6) => {
         6

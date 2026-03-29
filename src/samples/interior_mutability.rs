@@ -1,18 +1,16 @@
-#![allow(dead_code)]
-
 use std::cell::Cell;
 use std::mem;
 use std::sync::{Mutex, RwLock};
 
 #[derive(Debug)]
 struct Phone<'a> {
-    name: &'a str,
-    date_issued: u32,
+    _name: &'a str,
+    _date_issued: u32,
     on_sale: Cell<bool>,
 }
 
 pub fn use_cell() {
-    let phone = Phone { name: "Samsung", date_issued: 10500, on_sale: Cell::new(true) };
+    let phone = Phone { _name: "Samsung", _date_issued: 10500, on_sale: Cell::new(true) };
     phone.on_sale.set(false);
     println!("phone {:?}", phone);
 }

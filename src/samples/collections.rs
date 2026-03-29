@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::collections::{BinaryHeap, HashMap, VecDeque};
 
 pub fn make_survey() {

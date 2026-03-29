@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::sync::{Arc, Mutex};
 
 pub fn call_thread() {

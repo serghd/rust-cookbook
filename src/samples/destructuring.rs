@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub struct City {
     name: String,
     name_before: String,
@@ -17,4 +15,9 @@ impl City {
         let two_names = vec![name, name_before];
         println!("City's two names are: {:?}", two_names)
     }
+}
+
+pub fn destruct_city() {
+    let city = City::create("City New".to_string(), "City Old".to_string(), 5000, 1219);
+    city.process_city();
 }

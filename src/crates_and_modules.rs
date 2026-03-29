@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub mod print_things {
     use std::fmt::Display;
     pub fn prints_one_thing<T: Display>(input: T) {
@@ -28,4 +26,11 @@ pub mod country {
             }
         }
     }
+}
+
+////////////////////////////////////////////
+
+pub fn evaluate_crates_and_modules() {
+    print_things::prints_one_thing("One thing...");
+    country::province::city::print_city("Canada", "New Brunswick", "Moncton");
 }

@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 #[derive(Debug)]
 struct User {
     name: String,
@@ -14,7 +12,7 @@ pub fn create_and_display_object() {
 
     match &user {
         Some(u) => {
-            println!("#2 {:?}", u);
+            println!("#2 {:?}, name: {}", u, u.name);
         },
         None => {
             println!("None");
@@ -23,8 +21,7 @@ pub fn create_and_display_object() {
 }
 
 pub fn display_weather() {
-    let city_weathers =
-        vec![vec!["Berlin", "cloudy", "-5", "10", "12"], vec!["Athens", "24", "40", "32"]];
+    let city_weathers = vec![vec!["Berlin", "cloudy", "-5", "10", "12"], vec!["Athens", "24", "40", "32"]];
 
     for mut weather_info in city_weathers {
         println!("City {}", weather_info[0]);

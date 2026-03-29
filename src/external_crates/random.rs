@@ -76,12 +76,7 @@ impl Display for Character {
 {}
 {}
 {}",
-            self.strength,
-            self.dexterity,
-            self.constitution,
-            self.intelligence,
-            self.wisdom,
-            self.charisma
+            self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma
         )
     }
 }
