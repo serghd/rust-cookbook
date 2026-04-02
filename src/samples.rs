@@ -1,3 +1,4 @@
+pub mod args;
 pub mod boxes;
 pub mod builder;
 pub mod chaining_methods;
@@ -19,3 +20,5 @@ pub mod rc;
 pub mod threads;
 pub mod traits;
 pub mod tuples;
+pub mod user_input;
+pub mod vars;

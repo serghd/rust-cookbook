@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use rayon::prelude::*;
 
 pub fn evaluate_rayon_vec() {

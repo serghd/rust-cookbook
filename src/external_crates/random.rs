@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use rand::RngExt;
 use std::fmt::{Display, Formatter};
 

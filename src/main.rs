@@ -5,6 +5,7 @@ mod standard_library;
 mod tests;
 
 use crate::crates_and_modules::evaluate_crates_and_modules;
+use crate::samples::args::evaluate_args;
 use crate::samples::boxes::evaluate_errors;
 use crate::samples::builder::use_builder;
 use crate::samples::chaining_methods::make_chaining;
@@ -35,6 +36,8 @@ use crate::samples::traits::{
     print_with_impl_trait, traits_gives_higher_i32, traits_print_string_as_bytes,
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
+use crate::samples::user_input::evaluate_user_input;
+use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
 
@@ -154,11 +157,15 @@ fn main() {
     examples.insert("macro_print_anything2", macro_print_anything2);
     examples.insert("macro_make_a_function", macro_make_a_function);
 
-    let sample_name = "standard_library::floats::evaluate_floats";
+    // #25. User input & args & vars
+    examples.insert("evaluate_user_input", evaluate_user_input);
+    examples.insert("evaluate_args", evaluate_args);
+    examples.insert("print_vars", print_vars);
+
+    let sample_name = "print_vars";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
         println!("No example found with name '{}'", sample_name);
     }
-
 }
