@@ -37,6 +37,7 @@ use crate::samples::traits::{
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
 use crate::samples::user_input::evaluate_user_input;
+use crate::samples::using_files::process_file_wrapper;
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
@@ -162,7 +163,10 @@ fn main() {
     examples.insert("evaluate_args", evaluate_args);
     examples.insert("print_vars", print_vars);
 
-    let sample_name = "print_vars";
+    // #26. Using files
+    examples.insert("process_file_wrapper", process_file_wrapper);
+
+    let sample_name = "process_file_wrapper";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
