@@ -41,6 +41,7 @@ use crate::samples::using_files::process_file_wrapper;
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
+use crate::samples::doc_sample::evaluate_docs;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -166,7 +167,12 @@ fn main() {
     // #26. Using files
     examples.insert("process_file_wrapper", process_file_wrapper);
 
-    let sample_name = "process_file_wrapper";
+    // #27. Docs
+    // generate docs command:
+    // cargo doc --open
+    examples.insert("evaluate_docs", evaluate_docs);
+
+    let sample_name = "evaluate_docs";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {

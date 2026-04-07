@@ -17,7 +17,7 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...",
     write!(&mut calvin_file, "Well, truth is stranger than fiction.")?;
 
     println!("{}", fs::read_to_string("calvin_with_dad.txt")?);
-    Ok(("success".to_string()))
+    Ok(String::from("success"))
 }
 
 pub fn process_file_wrapper() {
