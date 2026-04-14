@@ -18,6 +18,7 @@ use crate::samples::collections::{binary_heap_demo, make_survey, vec_deque_demo}
 use crate::samples::cow::{evaluate_cow, evaluate_cow_vector};
 use crate::samples::deref::evaluate_deref;
 use crate::samples::destructuring::destruct_city;
+use crate::samples::doc_sample::evaluate_docs;
 use crate::samples::enums::process_numbers;
 use crate::samples::generics::process_objects;
 use crate::samples::inspect::evaluate_inspect;
@@ -37,11 +38,10 @@ use crate::samples::traits::{
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
 use crate::samples::user_input::evaluate_user_input;
-use crate::samples::using_files::process_file_wrapper;
+use crate::samples::using_files::{read_from_file_wrapper, write_in_file_wrapper};
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
-use crate::samples::doc_sample::evaluate_docs;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -165,14 +165,15 @@ fn main() {
     examples.insert("print_vars", print_vars);
 
     // #26. Using files
-    examples.insert("process_file_wrapper", process_file_wrapper);
+    examples.insert("write_in_file_wrapper", write_in_file_wrapper);
+    examples.insert("read_from_file_wrapper", read_from_file_wrapper);
 
     // #27. Docs
     // generate docs command:
     // cargo doc --open
     examples.insert("evaluate_docs", evaluate_docs);
 
-    let sample_name = "evaluate_docs";
+    let sample_name = "read_from_file_wrapper";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
