@@ -3,6 +3,7 @@ pub mod boxes;
 pub mod builder;
 pub mod chaining_methods;
 pub mod channels;
+pub mod child_processes;
 pub mod closures;
 pub mod collections;
 pub mod cow;

@@ -10,6 +10,7 @@ use crate::samples::boxes::evaluate_errors;
 use crate::samples::builder::use_builder;
 use crate::samples::chaining_methods::make_chaining;
 use crate::samples::channels::use_channels;
+use crate::samples::child_processes::wrong_arguments;
 use crate::samples::closures::{
     evaluate_closures_1, evaluate_closures_2, evaluate_closures_3, evaluate_closures_4, evaluate_closures_5,
     evaluate_closures_6,
@@ -173,7 +174,11 @@ fn main() {
     // cargo doc --open
     examples.insert("evaluate_docs", evaluate_docs);
 
-    let sample_name = "read_from_file_wrapper";
+    // #28. Child processes
+    // (try to pass wrong arguments in the child process)
+    examples.insert("wrong_arguments", wrong_arguments);
+
+    let sample_name = "wrong_arguments";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
