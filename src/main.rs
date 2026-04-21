@@ -50,6 +50,7 @@ fn main() {
     // #1. Option
     examples.insert("option::create_and_display_object", option::create_and_display_object);
     examples.insert("option::display_weather", option::display_weather);
+    examples.insert("option::evaluate_divisions", option::evaluate_divisions);
 
     // #2. Tuple Operations
     examples.insert("tuple_print", tuple_print);
@@ -178,7 +179,7 @@ fn main() {
     // (try to pass wrong arguments in the child process)
     examples.insert("wrong_arguments", wrong_arguments);
 
-    let sample_name = "wrong_arguments";
+    let sample_name = "option::evaluate_divisions";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {

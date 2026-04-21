@@ -33,3 +33,24 @@ pub fn display_weather() {
         }
     }
 }
+
+////////////////////////////////////////////
+
+fn checked_division(dividend: i32, divisor: i32) -> Option<i32>{
+    if divisor == 0 {
+        return None;
+    }
+    Some(dividend / divisor)
+}
+
+fn try_division(dividend: i32, divisor: i32) {
+    match checked_division(dividend, divisor) {
+        None => println!("{} / {} = failed!", dividend, divisor),
+        Some(quotient) => println!("{} / {} = {}", dividend, divisor, quotient)
+    }
+}
+
+pub fn evaluate_divisions() {
+    try_division(10, 0);
+    try_division(20, 10);
+}
