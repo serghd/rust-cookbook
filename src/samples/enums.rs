@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 
+use crate::samples::enums::Foo::Quz;
+
 enum Number {
     UINT(u32),
     INT(i32),
@@ -24,5 +26,32 @@ pub fn process_numbers() {
                 println!("{}", number)
             },
         }
+    }
+}
+
+////////////////////////////////////////////
+
+enum Foo {
+    Bar,
+    Baz,
+    Quz(u32),
+}
+
+pub fn evaluate_enum() {
+    let a = Foo::Bar;
+    let b = Foo::Baz;
+    let c = Quz(100);
+
+    if let Foo::Bar = a {
+        println!("a is foobar");
+    }
+    if let Foo::Bar = b {
+        println!("b is foobar")
+    }
+    if let Quz(value) = c {
+        println!("c is {}", value);
+    }
+    if let Quz(value @ 1..=100) = c {
+        println!("c is one hundred or less");
     }
 }

@@ -20,7 +20,7 @@ use crate::samples::cow::{evaluate_cow, evaluate_cow_vector};
 use crate::samples::deref::evaluate_deref;
 use crate::samples::destructuring::destruct_city;
 use crate::samples::doc_sample::evaluate_docs;
-use crate::samples::enums::process_numbers;
+use crate::samples::enums::{evaluate_enum, process_numbers};
 use crate::samples::generics::process_objects;
 use crate::samples::inspect::evaluate_inspect;
 use crate::samples::interior_mutability::{use_cell, use_mutex, use_rw_lock};
@@ -58,6 +58,7 @@ fn main() {
 
     // #3. Enums
     examples.insert("process_numbers", process_numbers);
+    examples.insert("evaluate_enum", evaluate_enum);
 
     // #4. Destructuring
     examples.insert("destruct_city", destruct_city);
@@ -179,7 +180,7 @@ fn main() {
     // (try to pass wrong arguments in the child process)
     examples.insert("wrong_arguments", wrong_arguments);
 
-    let sample_name = "option::evaluate_divisions";
+    let sample_name = "evaluate_enum";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
