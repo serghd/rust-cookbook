@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use crate::samples::enums::Foo::Quz;
 
 enum Number {
@@ -51,7 +49,7 @@ pub fn evaluate_enum() {
     if let Quz(value) = c {
         println!("c is {}", value);
     }
-    if let Quz(value @ 1..=100) = c {
+    if let Quz(_value @ 1..=100) = c {
         println!("c is one hundred or less");
     }
 }

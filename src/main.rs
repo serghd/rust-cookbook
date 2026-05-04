@@ -43,6 +43,7 @@ use crate::samples::using_files::{read_from_file_wrapper, write_in_file_wrapper}
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
+use crate::samples::diverging_functions::process_diverging_functions;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -180,7 +181,10 @@ fn main() {
     // (try to pass wrong arguments in the child process)
     examples.insert("wrong_arguments", wrong_arguments);
 
-    let sample_name = "evaluate_enum";
+    // #29. Diverging functions
+    examples.insert("process_diverging_functions", process_diverging_functions);
+
+    let sample_name = "process_diverging_functions";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
