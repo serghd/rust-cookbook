@@ -11,6 +11,6 @@ fn sum_odd_numbers(up_to: u32) -> u32 {
 }
 
 pub fn process_diverging_functions() {
-    let sum  = sum_odd_numbers(155);
+    let sum = sum_odd_numbers(155);
     println!("sum: {}", sum);
 }

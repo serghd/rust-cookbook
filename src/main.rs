@@ -19,6 +19,7 @@ use crate::samples::collections::{binary_heap_demo, make_survey, vec_deque_demo}
 use crate::samples::cow::{evaluate_cow, evaluate_cow_vector};
 use crate::samples::deref::evaluate_deref;
 use crate::samples::destructuring::destruct_city;
+use crate::samples::diverging_functions::process_diverging_functions;
 use crate::samples::doc_sample::evaluate_docs;
 use crate::samples::enums::{evaluate_enum, process_numbers};
 use crate::samples::generics::process_objects;
@@ -34,8 +35,8 @@ use crate::samples::option;
 use crate::samples::rc::{evaluate_rc, evaluate_rc2};
 use crate::samples::threads::{call_concurrent_threads, call_thread, using_arc_variant1, using_arc_variant2};
 use crate::samples::traits::{
-    call_returned_closures, evaluate_trait, evaluate_trait_bounds, evaluate_trait_from, print_objects_as_ref,
-    print_with_impl_trait, traits_gives_higher_i32, traits_print_string_as_bytes,
+    call_returned_closures, evaluate_drops, evaluate_trait, evaluate_trait_bounds, evaluate_trait_from,
+    print_objects_as_ref, print_with_impl_trait, traits_gives_higher_i32, traits_print_string_as_bytes,
 };
 use crate::samples::tuples::{tuple_destructuring, tuple_print};
 use crate::samples::user_input::evaluate_user_input;
@@ -43,7 +44,6 @@ use crate::samples::using_files::{read_from_file_wrapper, write_in_file_wrapper}
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
-use crate::samples::diverging_functions::process_diverging_functions;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -81,6 +81,7 @@ fn main() {
     examples.insert("traits_gives_higher_i32", traits_gives_higher_i32);
     examples.insert("print_with_impl_trait", print_with_impl_trait);
     examples.insert("call_returned_closures", call_returned_closures);
+    examples.insert("evaluate_drops", evaluate_drops);
 
     // #8. Chaining methods
     examples.insert("make_chaining", make_chaining);
@@ -184,7 +185,7 @@ fn main() {
     // #29. Diverging functions
     examples.insert("process_diverging_functions", process_diverging_functions);
 
-    let sample_name = "process_diverging_functions";
+    let sample_name = "evaluate_drops";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {

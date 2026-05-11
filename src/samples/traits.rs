@@ -187,7 +187,7 @@ pub fn print_with_impl_trait() {
 
 ////////////////////////////////////////////
 
-fn returns_a_closure(input: &str) -> impl FnMut(i32) -> i32 {
+fn returns_a_closure(input: &str) -> impl Fn(i32) -> i32 {
     match input {
         "double" => |mut number| {
             number *= 2;
@@ -207,10 +207,36 @@ fn returns_a_closure(input: &str) -> impl FnMut(i32) -> i32 {
 }
 
 pub fn call_returned_closures() {
-    let mut doubled_fun = returns_a_closure("double");
-    let mut tripled_fun = returns_a_closure("triple");
-    let mut other_fun = returns_a_closure("other");
+    let doubled_fun = returns_a_closure("double");
+    let tripled_fun = returns_a_closure("triple");
+    let other_fun = returns_a_closure("other");
     doubled_fun(10);
     tripled_fun(5);
     other_fun(10);
+}
+
+////////////////////////////////////////////
+
+struct HasDrop;
+
+impl Drop for HasDrop {
+    fn drop(&mut self) {
+        println!("Dropping HasDrop!");
+    }
+}
+
+struct HasTwoDrops {
+    _one: HasDrop,
+    _two: HasDrop,
+}
+
+impl Drop for HasTwoDrops {
+    fn drop(&mut self) {
+        println!("Dropping HasTwoDrops!")
+    }
+}
+
+pub fn evaluate_drops() {
+    let _x = HasTwoDrops { _one: HasDrop, _two: HasDrop };
+    println!("Running!");
 }

@@ -1,5 +1,5 @@
 use std::fs;
-use std::fs::{OpenOptions};
+use std::fs::OpenOptions;
 use std::io::Write;
 
 fn write_in_file() -> std::io::Result<String> {
