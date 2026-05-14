@@ -217,6 +217,8 @@ pub fn call_returned_closures() {
 
 ////////////////////////////////////////////
 
+/* object destruction order*/
+
 struct HasDrop;
 
 impl Drop for HasDrop {

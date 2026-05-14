@@ -28,7 +28,6 @@ impl Library {
     pub fn new() -> Self {
         Self { _lib_type: LibraryType::City, books: Vec::new() }
     }
-
     pub fn add_book(&mut self, title: &str) {
         self.books.push(title.to_string());
     }
@@ -54,4 +53,17 @@ pub fn evaluate_iterators_2() {
     for item in library.clone() {
         println!("{:?}", item);
     }
+}
+
+/////////////////////////////////////////
+
+// Collect all valid values and failures
+pub fn values_and_failures() {
+    let strings = vec!["tofu", "11", "34"];
+    let (numbers, errors): (Vec<_>, Vec<_>) =
+        strings.into_iter().map(|item| item.parse::<i32>()).partition(Result::is_ok);
+    let numbers: Vec<_> = numbers.into_iter().map(Result::unwrap).collect();
+    let errors: Vec<_> = errors.into_iter().map(Result::unwrap_err).collect();
+    println!("numbers: {:?}", numbers);
+    println!("errors: {:?}", errors);
 }

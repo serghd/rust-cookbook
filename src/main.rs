@@ -25,7 +25,7 @@ use crate::samples::enums::{evaluate_enum, process_numbers};
 use crate::samples::generics::process_objects;
 use crate::samples::inspect::evaluate_inspect;
 use crate::samples::interior_mutability::{use_cell, use_mutex, use_rw_lock};
-use crate::samples::iterators::{evaluate_iterators_1, evaluate_iterators_2};
+use crate::samples::iterators::{evaluate_iterators_1, evaluate_iterators_2, values_and_failures};
 use crate::samples::lifetimes::{evaluate_advanturer, lt_get_str, show_city_info};
 use crate::samples::macros::{
     macro_check_if_equal, macro_make_a_function, macro_might_print, macro_print_anything, macro_print_anything2,
@@ -89,6 +89,7 @@ fn main() {
     // #9. Iterators
     examples.insert("evaluate_iterators_1", evaluate_iterators_1);
     examples.insert("evaluate_iterators_2", evaluate_iterators_2);
+    examples.insert("values_and_failures", values_and_failures);
 
     // #10. Closures
     examples.insert("evaluate_closures_1", evaluate_closures_1);
@@ -185,7 +186,7 @@ fn main() {
     // #29. Diverging functions
     examples.insert("process_diverging_functions", process_diverging_functions);
 
-    let sample_name = "evaluate_drops";
+    let sample_name = "values_and_failures";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
