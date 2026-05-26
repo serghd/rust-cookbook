@@ -6,7 +6,7 @@ mod tests;
 
 use crate::crates_and_modules::evaluate_crates_and_modules;
 use crate::samples::args::evaluate_args;
-use crate::samples::boxes::evaluate_errors;
+use crate::samples::boxes::{evaluate_boxes, evaluate_errors};
 use crate::samples::builder::use_builder;
 use crate::samples::chaining_methods::make_chaining;
 use crate::samples::channels::use_channels;
@@ -131,6 +131,7 @@ fn main() {
 
     // #18. Box
     examples.insert("evaluate_errors", evaluate_errors);
+    examples.insert("evaluate_boxes", evaluate_boxes);
 
     // #19. Builder
     examples.insert("use_builder", use_builder);
@@ -186,7 +187,7 @@ fn main() {
     // #29. Diverging functions
     examples.insert("process_diverging_functions", process_diverging_functions);
 
-    let sample_name = "values_and_failures";
+    let sample_name = "evaluate_boxes";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
