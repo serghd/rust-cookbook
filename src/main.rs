@@ -18,6 +18,7 @@ use crate::samples::closures::{
 use crate::samples::collections::{binary_heap_demo, make_survey, vec_deque_demo};
 use crate::samples::cow::{evaluate_cow, evaluate_cow_vector};
 use crate::samples::deref::evaluate_deref;
+use crate::samples::derive::evaluate_derive_attributes;
 use crate::samples::destructuring::destruct_city;
 use crate::samples::diverging_functions::process_diverging_functions;
 use crate::samples::doc_sample::evaluate_docs;
@@ -187,7 +188,10 @@ fn main() {
     // #29. Diverging functions
     examples.insert("process_diverging_functions", process_diverging_functions);
 
-    let sample_name = "evaluate_boxes";
+    // #30. Derive
+    examples.insert("evaluate_derive_attributes", evaluate_derive_attributes);
+
+    let sample_name = "evaluate_derive_attributes";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {

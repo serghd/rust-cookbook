@@ -8,6 +8,7 @@ pub mod closures;
 pub mod collections;
 pub mod cow;
 pub mod deref;
+pub mod derive;
 pub mod destructuring;
 pub mod diverging_functions;
 pub mod doc_sample;
