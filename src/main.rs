@@ -45,6 +45,7 @@ use crate::samples::using_files::{read_from_file_wrapper, write_in_file_wrapper}
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
+use crate::samples::supertraits::evaluate_student;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -191,7 +192,10 @@ fn main() {
     // #30. Derive
     examples.insert("evaluate_derive_attributes", evaluate_derive_attributes);
 
-    let sample_name = "evaluate_derive_attributes";
+    // #31. Supertraits
+    examples.insert("evaluate_student", evaluate_student);
+
+    let sample_name = "evaluate_student";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
