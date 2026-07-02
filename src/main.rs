@@ -45,6 +45,7 @@ use crate::samples::using_files::{read_from_file_wrapper, write_in_file_wrapper}
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
+use crate::samples::path::evaluate_path;
 use crate::samples::supertraits::evaluate_student;
 
 fn main() {
@@ -195,7 +196,10 @@ fn main() {
     // #31. Supertraits
     examples.insert("evaluate_student", evaluate_student);
 
-    let sample_name = "evaluate_student";
+    // 32. Path
+    examples.insert("evaluate_path", evaluate_path);
+
+    let sample_name = "evaluate_path";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
