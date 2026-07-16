@@ -12,6 +12,6 @@ pub fn evaluate_path() {
     path_new.set_file_name("package.tgz");
     match path_new.to_str() {
         None => panic!("new path is not a valid UTF-8 sequence"),
-        Some(s) => println!("new path is {}", s)
+        Some(s) => println!("new path is {}", s),
     }
 }

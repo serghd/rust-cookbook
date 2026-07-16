@@ -15,7 +15,8 @@ trait CompSciStudent: Programmer + Student {
 }
 
 fn comp_sci_student_greeting(student: &dyn CompSciStudent) -> String {
-    format!("My name is {} and I attend {}. My favorite language is {}. My Git username is {}",
+    format!(
+        "My name is {} and I attend {}. My favorite language is {}. My Git username is {}",
         student.name(),
         student.university(),
         student.fav_language(),
@@ -27,7 +28,7 @@ struct CSStudent {
     name: String,
     university: String,
     fav_language: String,
-    git_username: String
+    git_username: String,
 }
 
 impl Programmer for CSStudent {
@@ -55,11 +56,12 @@ impl CompSciStudent for CSStudent {
 }
 
 pub fn evaluate_student() {
-    let student = CSStudent{
+    let student = CSStudent {
         name: String::from("Alice"),
         university: String::from("MIT"),
         fav_language: String::from("Rust"),
-        git_username: String::from("alice_codes")};
+        git_username: String::from("alice_codes"),
+    };
 
     let greeting = comp_sci_student_greeting(&student);
     println!("{}", greeting);
