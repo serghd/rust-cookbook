@@ -1,27 +1,36 @@
 use crate::samples::enums::Foo::Quz;
 
-enum Number {
-    UINT(u32),
+#[derive(Debug)]
+enum NumberStorage {
+    UINT(u32), // "Tuple pattern"
     INT(i32),
+    Circle { radius: f32 }, // "Struct pattern"
+    Unit,
 }
 
-fn get_number(number: i32) -> Number {
+fn get_number(number: i32) -> NumberStorage {
     let result = match number.is_positive() {
-        true => Number::UINT(number as u32),
-        false => Number::INT(number),
+        true => NumberStorage::UINT(number as u32),
+        false => NumberStorage::INT(number),
     };
     result
 }
 
 pub fn process_numbers() {
-    let my_vec = vec![get_number(-800), get_number(10)];
+    let my_vec = vec![get_number(-800), get_number(10), NumberStorage::Circle { radius: 13.0 }, NumberStorage::Unit];
     for item in my_vec {
         match item {
-            Number::UINT(number) => {
+            NumberStorage::UINT(number) => {
                 println!("{}", number)
             },
-            Number::INT(number) => {
+            NumberStorage::INT(number) => {
                 println!("{}", number)
+            },
+            NumberStorage::Circle { radius } => {
+                println!("{}", radius)
+            },
+            NumberStorage::Unit => {
+                println!("{:?}", NumberStorage::Unit)
             },
         }
     }

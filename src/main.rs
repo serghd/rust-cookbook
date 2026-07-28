@@ -203,7 +203,7 @@ fn main() {
     // 33. Bounts
     examples.insert("process_bounds", process_bounds);
 
-    let sample_name = "process_bounds";
+    let sample_name = "process_numbers";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
