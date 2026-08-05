@@ -48,6 +48,7 @@ use crate::samples::using_files::{read_from_file_wrapper, write_in_file_wrapper}
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
+use crate::samples::cfg::evaluate_cfg;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -202,8 +203,11 @@ fn main() {
 
     // 33. Bounts
     examples.insert("process_bounds", process_bounds);
+    
+    // 34. cfg
+    examples.insert("evaluate_cfg", evaluate_cfg);
 
-    let sample_name = "process_numbers";
+    let sample_name = "evaluate_cfg";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
