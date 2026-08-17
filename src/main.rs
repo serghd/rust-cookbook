@@ -49,6 +49,7 @@ use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
 use crate::samples::cfg::evaluate_cfg;
+use crate::samples::result::use_result;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -207,7 +208,10 @@ fn main() {
     // 34. cfg
     examples.insert("evaluate_cfg", evaluate_cfg);
 
-    let sample_name = "evaluate_cfg";
+    // 35. Result
+    examples.insert("use_result", use_result);
+
+    let sample_name = "use_result";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
