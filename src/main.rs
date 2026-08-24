@@ -9,6 +9,7 @@ use crate::samples::args::evaluate_args;
 use crate::samples::bounds::process_bounds;
 use crate::samples::boxes::{evaluate_boxes, evaluate_errors};
 use crate::samples::builder::use_builder;
+use crate::samples::cfg::evaluate_cfg;
 use crate::samples::chaining_methods::make_chaining;
 use crate::samples::channels::use_channels;
 use crate::samples::child_processes::wrong_arguments;
@@ -36,6 +37,7 @@ use crate::samples::macros::{
 use crate::samples::option;
 use crate::samples::path::evaluate_path;
 use crate::samples::rc::{evaluate_rc, evaluate_rc2};
+use crate::samples::result::use_result;
 use crate::samples::supertraits::evaluate_student;
 use crate::samples::threads::{call_concurrent_threads, call_thread, using_arc_variant1, using_arc_variant2};
 use crate::samples::traits::{
@@ -48,8 +50,6 @@ use crate::samples::using_files::{read_from_file_wrapper, write_in_file_wrapper}
 use crate::samples::vars::print_vars;
 use crate::standard_library::vectors::evaluate_vector;
 use std::collections::HashMap;
-use crate::samples::cfg::evaluate_cfg;
-use crate::samples::result::use_result;
 
 fn main() {
     let mut examples: HashMap<&str, fn()> = HashMap::new();
@@ -204,7 +204,7 @@ fn main() {
 
     // 33. Bounts
     examples.insert("process_bounds", process_bounds);
-    
+
     // 34. cfg
     examples.insert("evaluate_cfg", evaluate_cfg);
 
