@@ -38,6 +38,7 @@ use crate::samples::option;
 use crate::samples::path::evaluate_path;
 use crate::samples::rc::{evaluate_rc, evaluate_rc2};
 use crate::samples::result::use_result;
+use crate::samples::result_and_option::result_and_option;
 use crate::samples::supertraits::evaluate_student;
 use crate::samples::threads::{call_concurrent_threads, call_thread, using_arc_variant1, using_arc_variant2};
 use crate::samples::traits::{
@@ -211,7 +212,10 @@ fn main() {
     // 35. Result
     examples.insert("use_result", use_result);
 
-    let sample_name = "use_result";
+    // 36. Result and Option
+    examples.insert("result_and_option", result_and_option);
+
+    let sample_name = "result_and_option";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {

@@ -42,11 +42,11 @@ fn print_aliased(res: &AliasedResult<i32>) {
 
 // early returns
 fn multiply_early_returns(first_number_str: &str, second_number_str: &str) -> AliasedResult<i32> {
-    let first_number  = match first_number_str.parse::<i32>() {
+    let first_number = match first_number_str.parse::<i32>() {
         Ok(n) => n,
         Err(e) => return Err(e),
     };
-    let second_number  = match second_number_str.parse::<i32>() {
+    let second_number = match second_number_str.parse::<i32>() {
         Ok(n) => n,
         Err(e) => return Err(e),
     };
@@ -54,7 +54,7 @@ fn multiply_early_returns(first_number_str: &str, second_number_str: &str) -> Al
 }
 
 // operator "?"
-fn multiply_with_question_mark(first_number_str: &str, second_number_str: &str) -> AliasedResult<i32>{
+fn multiply_with_question_mark(first_number_str: &str, second_number_str: &str) -> AliasedResult<i32> {
     let first_number = first_number_str.parse::<i32>()?;
     let second_number = second_number_str.parse::<i32>()?;
     Ok(first_number * second_number)

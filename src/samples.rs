@@ -25,6 +25,7 @@ pub mod option;
 pub mod path;
 pub mod rc;
 pub mod result;
+pub mod result_and_option;
 pub mod supertraits;
 pub mod threads;
 pub mod traits;
