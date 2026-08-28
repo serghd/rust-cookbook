@@ -9,6 +9,7 @@ pub mod child_processes;
 pub mod closures;
 pub mod collections;
 pub mod cow;
+pub mod define_error_type;
 pub mod deref;
 pub mod derive;
 pub mod destructuring;

@@ -19,6 +19,7 @@ use crate::samples::closures::{
 };
 use crate::samples::collections::{binary_heap_demo, make_survey, vec_deque_demo};
 use crate::samples::cow::{evaluate_cow, evaluate_cow_vector};
+use crate::samples::define_error_type::use_custom_error;
 use crate::samples::deref::evaluate_deref;
 use crate::samples::derive::evaluate_derive_attributes;
 use crate::samples::destructuring::destruct_city;
@@ -215,7 +216,10 @@ fn main() {
     // 36. Result and Option
     examples.insert("result_and_option", result_and_option);
 
-    let sample_name = "result_and_option";
+    // 37. Using custom errors
+    examples.insert("use_custom_error", use_custom_error);
+
+    let sample_name = "use_custom_error";
     if let Some(sample) = examples.get(sample_name) {
         sample();
     } else {
